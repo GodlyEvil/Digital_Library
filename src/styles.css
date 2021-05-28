@@ -1,1 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
+@import url(./assets/fonts/fonts.css);
+
+:root {
+    --main-text-color: #5E56E7;
+    --main-font-family: 'mnts-reg';
+    --main-font-family-sb: 'mnts-semibold';
+    --main-bg-color: #F8F7FF;
+    --main-font-color: #333333;
+    --main-grey: #A0A0A0;
+    --main-input-grey: #F0F0F6;
+}
+
+body {
+    font-family: var(--main-font-family);
+    font-size: 1rem;
+    padding: 0 10%;
+    background-color: var(--main-bg-color);
+    color: var(--main-font-color);
+    text-overflow: ellipsis;
+}
+
+.headings {
+    font-family: var(--main-font-family-sb);
+    color: var(--main-text-color);
+    cursor: default;
+}
+
+.headings.heading2 {
+    font-size: 1.875rem;
+    padding-right: 2%;
+}
+
+
+.tooltip {
+    position: absolute;
+    max-width: 90%;
+    font-size: 12px;
+    text-align: center;
+    color: var(--main-font-color);
+    padding: 5px;
+    background-color: beige;
+    z-index: 1000;
+    opacity: 1;
+    border: 1px solid var(--main-text-color);
+    border-radius: 5px;
+    visibility: hidden;
+  }
+  
+  .tooltip_show {
+    visibility: visible;
+  }

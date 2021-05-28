@@ -1,0 +1,113 @@
+a {
+    text-decoration: none;
+}
+a span {
+    cursor: pointer;
+}
+
+.top-section {
+    margin-top: 3%;
+    background-color: var(--main-bg-color);
+    opacity: 1;
+}
+
+button {
+    border-style: hidden;
+    margin-right: 3px;
+}
+
+button:hover {
+    color: red;
+}
+
+input {
+    padding: 0 0.625em;
+    height: 100%;
+    width: 100%;
+    outline: none !important;
+    border: none;
+    background-color: var(--main-input-grey);
+}
+
+input:focus {
+    font-family: var(--main-font-family-sb);
+    opacity: 1;
+}
+
+.search-section {
+    margin: 3% 0 3% 0;
+    display: flex;
+    width: 100%;
+    border: 2px solid transparent;
+    opacity: 0.5;
+    border-radius: 4px;
+    background-color: var(--main-input-grey);
+    height: 2.5em;
+}
+
+.search-section:hover {
+    border-color: var(--main-text-color);
+}
+
+.search-section:focus-within {
+    border-color: var(--main-text-color);
+}
+
+.search-section:hover > * {
+    border-color: var(--main-text-color);
+}
+
+.imageClass {
+    content: url(../../../assets/icons/search.svg);
+    height: 1.875em;
+    padding: 5px;
+}
+
+.result-section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+app-book-card {
+    margin: 1% 2% 1em 0;
+}
+
+.loader {
+	margin: auto;
+    width: 150px;
+}
+
+.loader p {
+    height: 100px;
+    margin-top: 75px;
+}
+
+.loader img {
+    height: 50px;
+    margin-top: 100px;
+}
+
+.helperText {
+    font-size: 0.625em;
+    width: 15%;
+    line-height: 2.5em;
+    opacity: 1;
+    color: black;
+    cursor: default;
+    visibility: visible;
+}
+
+@media (orientation: portrait) {
+    .result-section > * {
+        flex: 1 1 50%;
+    }
+
+    app-book-card {
+        margin: 0 0 1em 0;
+    }
+
+    [class="helperText"] {
+        visibility: hidden;
+    }
+}
+

@@ -1,0 +1,7 @@
+<div class="container" (click)="open()">
+    <div class="rectangle">
+        <img [src]="imagePath" [alt]="title" width="114px" height="162px">
+    </div>
+    <div class="bookname">{{title | uppercase | ellipsis:28}}</div>
+    <div class="authorname">{{author | ellipsis:20}}</div>
+</div>

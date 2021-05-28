@@ -1,0 +1,33 @@
+.container {
+    width: 114px;
+    word-wrap: normal;
+    border: 0.188em solid transparent;
+    border-radius: 0.5em;
+}
+
+.container:hover{
+    cursor: pointer;
+}
+
+.rectangle {
+    width: 7.125em;
+    height: 10.125em;
+    border-radius: 0.5em;
+    box-shadow: 0 0.125em 0.313em 0 rgba(211, 209, 238, 0.5);
+    background-color: transparent;
+    overflow: hidden;
+}
+
+.bookname {
+    margin: 10% 0 1% 0;
+    font-family: var(--main-font-family-sb);
+    font-size: 0.688em;
+    line-height: 1.5em;
+    overflow: hidden;
+    width: 100%;
+}
+
+.authorname {
+    color: var(--main-grey);
+    font-size: 0.625em;
+}

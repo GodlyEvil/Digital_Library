@@ -1,0 +1,19 @@
+<div class="top-section">
+    <a [routerLink]="[ '/home' ]"><span class="headings heading2">&#8592;</span></a>
+    <span class="headings heading2">{{genre | stdCase}}</span>
+</div>
+
+<div class="search-section">
+    <i class="imageClass"></i>
+    <input type="text" [placeholder]="searchBoxPlaceholder" [(ngModel)]="searchText" (keyup)="search($event)">
+    <span *ngIf="searchText !== ''" class="helperText">Press Enter for full search!</span>
+    <button type="button" *ngIf="searchText !== ''" (click)="clearSearchText()">x</button>
+</div>
+
+<div class="result-section">
+    <app-book-card *ngFor="let book of searchResults" [author]="book.author" [title]="book.title" [imagePath]="book.imagePath" [link]="book.link"></app-book-card>
+</div>
+<div class="loader">
+    <img src='../../../assets/icons/loader.gif' *ngIf="isLoading">
+    <p *ngIf="(((results.length === totalCount) || (results.length > searchResults.length)) || (searchCount === searchResults.length)) && !isLoading">No <span *ngIf="searchResults.length > 0">more</span> results!</p>
+</div>

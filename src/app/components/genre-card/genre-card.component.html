@@ -1,0 +1,6 @@
+<a [routerLink]="[ '/page', genreName ]">
+    <div class="card-content">
+        <img [src]="genreIcon" [alt]="genreName">
+        <p class="genre-name">{{genreName | uppercase}} <span class="arrow-right">&#8594;</span></p>
+    </div>
+</a>
