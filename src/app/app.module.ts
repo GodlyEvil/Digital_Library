@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms'
-import { HttpClientModule } from '@angular/common/http'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +14,8 @@ import { TooltipDirective } from './directives/tooltip.directive';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { HttpService } from './services/http.service';
+import { LoginPageComponent } from './components/login-page/login-page.component';
+import { AuthInterceptorService } from './services/auth-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -25,15 +27,17 @@ import { HttpService } from './services/http.service';
     EllipsisPipe,
     TooltipDirective,
     HomePageComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [HttpService],
+  providers: [HttpService, {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

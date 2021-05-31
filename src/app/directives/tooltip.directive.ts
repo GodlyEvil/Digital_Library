@@ -40,5 +40,4 @@ export class TooltipDirective {
     this.renderer.addClass(this.tooltip, "tooltip");
     this.renderer.addClass(this.tooltip, "tooltip_show"); 
   }
-
 }

@@ -1,0 +1,13 @@
+<div class="signUpForm">
+    <form (submit)="onSubmit()" [formGroup]="loginForm">
+        <div class="form-group">
+            <label class="formLabel">Username</label>
+            <input type="text" formControlName="userName" >
+        </div>
+        <div class="form-group">
+            <label class="formLabel">Password</label>
+            <input type="password" formControlName="password">
+        </div>
+        <button type="submit" [disabled]="loginForm.status === 'INVALID'">Submit</button>
+    </form>
+</div>
